@@ -12,8 +12,26 @@ const unLike = (info) => {
                 "cookie": "SESSDATA=" + global.biliConfig.cookie
 
             },
+            // {"code":0,"message":"0","ttl":1}
+        }).then(data => {
+            if (data.data.code === 0 && data.data.message === "0") {
+                resolve({
+                    msg: info.uname + "---已为你取消关注",
+                    data: data.data
+                })
+            } else {
+                resolve({
+                    msg: info.uname + "---取消关注失败",
+                    data: data.data
+                })
+            }
 
-        }).then(data => resolve(info.uname + "---已为你取消关注")).catch(e => { reject(info.uname + ":------取消关注失败") })
+        }).catch(e => {
+            reject({
+                msg: info.uname + "---取消关注失败",
+                data: e.data
+            })
+        })
     })
 }
 
