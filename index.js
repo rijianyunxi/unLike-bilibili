@@ -8,6 +8,7 @@ async function init() {
     const utime = new Date(global.biliConfig.time).getTime() / 1000;
     let allList = await getAllFlow();
     let res = allList.filter(item => utime < item.mtime);
+
     for (let i = 0; i < res.length; i++) {
         if (res[i]) {
             try {
@@ -16,6 +17,8 @@ async function init() {
             } catch (e) {
                 console.log(e)
             }
+        } else {
+            console.log("执行完毕！");
         }
     }
 }

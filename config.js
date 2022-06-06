@@ -1,12 +1,12 @@
 // SESSDATA
-const cookie = "61f4df81%2C1657671568%2Cb58b5%2A11"
+const cookie = ""
 
 
 // DedeUserID
-const uid = "387323087"
+const uid = ""
 
 // bili_jct
-const csrf = "e2af4823f2b7b0ade6022e1f60042daf"
+const csrf = ""
 
 // time
 const time = "2022-05-25"

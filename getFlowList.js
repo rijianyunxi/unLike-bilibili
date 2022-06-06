@@ -35,6 +35,7 @@ function getAllFlow(currentPage = 1) {
                 })
                 eval(res.data)
             } catch (e) {
+                console.log(e.data, "-------------获取关注列表失败");
                 reject([])
             }
         }
